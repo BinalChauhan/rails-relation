@@ -1,0 +1,8 @@
+<h3>Employee show here</h3>
+
+<p>First Name : <%= @employee.firstname %></p>
+<p>Last Name : <%= @employee.lastname %></p>
+<p>Position : <%= @employee.position %></p>
+
+<%= link_to "Edit" ,edit_employee_path ,class: 'btn btn-primary' %></br></br>
+<%= link_to "Back",employees_path ,class: 'btn btn-primary'%>

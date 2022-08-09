@@ -1,0 +1,10 @@
+<%= form_with model: @company do |form| %>
+  <div>
+    <%= form.label :Company_Name %></br>
+    <%= form.text_field :comapny_name %>
+  </div></br>
+
+  <div>
+    <%= form.submit :Create ,class: 'btn btn-success' %>
+  </div>
+<% end %>

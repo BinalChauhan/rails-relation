@@ -1,0 +1,28 @@
+
+<%= link_to "Create User",new_user_path ,class: 'btn btn-success'%></br></br>
+<table id="table_2" class="table table-bordered">
+  <thead class="t">
+  <tr>
+    <td>First Name</td>
+    <td>Last Name</td>
+    <td>Email</td>
+    <td>Post</td>
+    <td>Edit</td>
+    <td>Show</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.fname  %></td>
+      <td><%= user.lname %></td>
+      <td><%= user.email %></td>
+      <td><% user.posts.each do |post| %>
+           <%= post.title %></td>
+          <% end %>
+      <td><%= link_to "Edit",edit_user_path(user) ,class: 'btn btn-link',  title: 'edit' %></td>
+      <td><%= link_to "Show",user_path(user),class: 'btn btn-link' ,title: 'show' %></td>
+  <% end %>
+  </tr>
+  </tbody>
+</table>

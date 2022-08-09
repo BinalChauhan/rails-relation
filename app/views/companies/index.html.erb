@@ -1,0 +1,22 @@
+<%= link_to "Create Company",new_company_path ,class: 'btn btn-success'%></br></br>
+
+<table id="table_3" class="table table-bordered">
+  <thead class="t">
+  <tr>
+    <td>Id</td>
+    <td>Company Name</td>
+    <td>Edit</td>
+    <td>Show More</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @companies.each do |company| %>
+    <tr>
+      <td><%= company.id  %></td>
+      <td><%= company.comapny_name %></td>
+      <td><%= link_to "Edit",edit_company_path(company) ,class: 'btn btn-link',  title: 'edit' %></td>
+      <td><%= link_to "Show",company_path(company) ,class: 'btn btn-link',  title: 'Shows' %></td>
+  <% end %>
+  </tr>
+  </tbody>
+</table>

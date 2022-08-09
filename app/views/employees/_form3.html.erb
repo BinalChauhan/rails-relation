@@ -1,0 +1,17 @@
+<%= form_with  model: @employee do |form| %>
+  <div>
+    <%= form.label :FirstName %></br>
+    <%= form.text_field :firstname %>
+  </div></br>
+  <div>
+    <%= form.label :LastName %><br/>
+    <%= form.text_field :lastname %>
+  </div></br>
+  <div>
+    <%= form.label :Position %><br/>
+    <%= form.text_field :position %>
+  </div></br>
+  <div>
+    <%= form.submit :Create ,class: 'btn btn-success' %>
+  </div>
+<% end %>

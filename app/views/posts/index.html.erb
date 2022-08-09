@@ -1,0 +1,35 @@
+
+<%= link_to "Create Post",new_post_path ,class: 'btn btn-success'%></br></br>
+<table id="table_1" class="table table-bordered">
+    <thead class="t">
+    <tr>
+      <td>Title</td>
+      <td>Description</td>
+      <td>Date</td>
+      <td>user's Email</td>
+      <td>Show More</td>
+    </tr>
+    </thead>
+    <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title  %></td>
+        <td><%= post.description %></td>
+        <td><%= post.date %></td>
+        <% if (post.user).present? %>
+          <td><%= link_to post.user.try(:email), user_url(post.user_id)%></td>
+          <%#= post.present? %>
+        <% else %>
+          <td></td>
+        <% end %>
+        <td><%= link_to "Show",post_path(post) ,class: 'btn btn-link',  title: 'Shows',data: {toggle:'tooltip'}, 'data-placement' => 'right',id: 'one' %></td>
+    <% end %>
+    </tr>
+    </tbody>
+</table>
+
+
+
+
+
+<%#= javascript_pack_tag 'customjs'%>

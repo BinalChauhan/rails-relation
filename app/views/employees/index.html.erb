@@ -1,0 +1,25 @@
+
+<%= link_to "Create Employee",new_employee_path ,class: 'btn btn-success'%></br></br>
+
+<table id="table_4" class="table table-bordered">
+<thead class="t">
+<tr>
+  <td>First Name</td>
+  <td>Last Name</td>
+  <td>Position</td>
+  <td>Edit</td>
+  <td>Show More</td>
+</tr>
+</thead>
+<tbody>
+<% @employees.each do |employee| %>
+  <tr>
+    <td><%= employee.firstname  %></td>
+    <td><%= employee.lastname %></td>
+    <td><%= employee.position %></td>
+    <td><%= link_to "Edit",edit_employee_path(employee) ,class: 'btn btn-link',  title: 'edit' %></td>
+    <td><%= link_to "Show",employee_path(employee) ,class: 'btn btn-link',  title: 'Shows' %></td>
+<% end %>
+</tr>
+</tbody>
+</table>
