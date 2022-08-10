@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :company
   enum status: [
     :'published',
     :'uploaded'

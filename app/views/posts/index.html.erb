@@ -7,6 +7,7 @@
       <td>Description</td>
       <td>Date</td>
       <td>user's Email</td>
+      <td>Company Name</td>
       <td>Show More</td>
     </tr>
     </thead>
@@ -18,18 +19,16 @@
         <td><%= post.date %></td>
         <% if (post.user).present? %>
           <td><%= link_to post.user.try(:email), user_url(post.user_id)%></td>
-          <%#= post.present? %>
+        <% else %>
+          <td></td>
+        <% end %>
+        <% if (post.company).present? %>
+          <td><%= link_to post.company.try(:comapny_name), company_path(post.company_id) %></td>
         <% else %>
           <td></td>
         <% end %>
         <td><%= link_to "Show",post_path(post) ,class: 'btn btn-link',  title: 'Shows',data: {toggle:'tooltip'}, 'data-placement' => 'right',id: 'one' %></td>
+      </tr>
     <% end %>
-    </tr>
     </tbody>
 </table>
-
-
-
-
-
-<%#= javascript_pack_tag 'customjs'%>

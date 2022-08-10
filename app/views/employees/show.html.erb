@@ -1,8 +1,6 @@
-<h3>Employee show here</h3>
+<p><b>First Name :</b> <%= @employee.firstname %></p>
+<p><b>Last Name :</b> <%= @employee.lastname %></p>
+<p><b>Position :</b> <%= @employee.position %></p>
+<p><b>Position :</b> <%= @employee.company.comapny_name %></p>
 
-<p>First Name : <%= @employee.firstname %></p>
-<p>Last Name : <%= @employee.lastname %></p>
-<p>Position : <%= @employee.position %></p>
-
-<%= link_to "Edit" ,edit_employee_path ,class: 'btn btn-primary' %></br></br>
-<%= link_to "Back",employees_path ,class: 'btn btn-primary'%>
+<%= link_to "Edit" ,edit_employee_path %>  &nbsp <%= link_to "Back",employees_path %>

@@ -1,4 +1,3 @@
-
 <%= link_to "Create Employee",new_employee_path ,class: 'btn btn-success'%></br></br>
 
 <table id="table_4" class="table table-bordered">
@@ -7,6 +6,7 @@
   <td>First Name</td>
   <td>Last Name</td>
   <td>Position</td>
+  <td>Company Name</td>
   <td>Edit</td>
   <td>Show More</td>
 </tr>
@@ -17,6 +17,11 @@
     <td><%= employee.firstname  %></td>
     <td><%= employee.lastname %></td>
     <td><%= employee.position %></td>
+    <% if (employee.company).present? %>
+      <td><%= link_to employee.company.try(:comapny_name), company_url(employee.company_id)%></td>
+    <% else %>
+      <td></td>
+    <% end %>
     <td><%= link_to "Edit",edit_employee_path(employee) ,class: 'btn btn-link',  title: 'edit' %></td>
     <td><%= link_to "Show",employee_path(employee) ,class: 'btn btn-link',  title: 'Shows' %></td>
 <% end %>

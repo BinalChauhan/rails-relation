@@ -1,8 +1,5 @@
-<h3>User Show Here</h3>
+<p><b>First Name :</b>  <%= @user.fname %></p>
+<p><b>Last Name :</b>  <%= @user.lname %></p>
+<p><b>Email :</b>  <%= @user.email %></p>
 
-<p>First Name :  <%= @user.fname %></p>
-<p>Last Name :  <%= @user.lname %></p>
-<p>Email :  <%= @user.email %></p>
-
-<%= link_to "Edit" ,edit_user_path ,class: 'btn btn-primary' %></br></br>
-<%= link_to "Back",users_path ,class: 'btn btn-primary'%>
+<%= link_to "Edit" ,edit_user_path %> &nbsp <%= link_to "Back",users_path %>

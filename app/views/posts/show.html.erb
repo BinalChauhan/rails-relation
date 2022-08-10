@@ -1,15 +1,6 @@
-<h1>Post Show Here</h1>
+<p><b>Title :</b>  <%= @post.title %></p>
+<p><b>Description :</b>  <%= @post.description %></p>
+<p><b>Date :</b>  <%= @post.date %></p>
 
-<p>Title :  <%= @post.title %></p>
-<p>Description :  <%= @post.description %></p>
-<p>Date :  <%= @post.date %></p>
+<%= link_to "Edit" ,edit_post_path(@post) %> &nbsp <%= link_to "Back",root_path %>
 
-<%= link_to "Edit" ,edit_post_path(@post) ,class: 'btn btn-primary' %></br></br>
-<%= link_to "Back",root_path ,class: 'btn btn-primary'%>
-<style>
-    body{
-        margin-left: 20px;
-        margin-top: 50px;
-    }
-</style>
-<%#= javascript_pack_tag 'customjs' %>

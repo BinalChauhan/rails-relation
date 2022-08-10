@@ -34,7 +34,7 @@ class CompaniesController < ApplicationController
 
   private
   def company_para
-    params.require(:company).permit(:comapny_name)
+    params.require(:company).permit(:comapny_name,:company_id)
   end
 
   def find_Company

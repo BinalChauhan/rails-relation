@@ -18,11 +18,12 @@
       <td><%= user.lname %></td>
       <td><%= user.email %></td>
       <td><% user.posts.each do |post| %>
-           <%= post.title %></td>
+              <%= post.title %>
           <% end %>
+      </td>
       <td><%= link_to "Edit",edit_user_path(user) ,class: 'btn btn-link',  title: 'edit' %></td>
       <td><%= link_to "Show",user_path(user),class: 'btn btn-link' ,title: 'show' %></td>
+        </tr>
   <% end %>
-  </tr>
   </tbody>
 </table>

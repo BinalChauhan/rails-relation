@@ -1,7 +1,5 @@
-<h1>Company Show Here</h1>
 
-<p>Id :  <%= @company.id %></p>
-<p>Company Name :  <%= @company.comapny_name %></p>
+<p><b>Id :</b>  <%= @company.id %></p>
+<p><b>Company Name :</b>  <%= @company.comapny_name %></p>
 
-<!--<%#= link_to "Edit" ,edit_post_path(@company) ,class: 'btn btn-primary' %></br></br>-->
-<%= link_to "Back",companies_path ,class: 'btn btn-primary'%>
+<p><%= link_to "Edit" ,edit_company_path %> &nbsp <%= link_to "Back",companies_path %> </p>
