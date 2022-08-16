@@ -32,3 +32,16 @@ body{
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
+.form-control {
+  transition: none;
+  box-shadow: none !important;
+}
+.form-select {
+  transition: none;
+  box-shadow: none !important;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin-left: 20px;
+  margin-top: 20px;
+}

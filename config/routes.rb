@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :companies
   resources :employees
+  resources :projects
+  resources :developers
   get "/posts/display/:id", to: "posts#display", as: "display_post"
 end

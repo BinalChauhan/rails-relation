@@ -11,4 +11,5 @@ $(document).ready(function (){
     $(".btn-link").mouseover(function (){
         $('[data-toggle="tooltip"]').tooltip();
     });
+
 })

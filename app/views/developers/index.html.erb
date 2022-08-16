@@ -1,0 +1,40 @@
+<%= link_to "Create Developer",new_developer_path ,class: 'btn btn-success'%></br></br>
+
+<table id="table_6" class="table table-bordered">
+  <thead class="t">
+  <tr>
+    <td>Name</td>
+    <td>Email</td>
+    <td>Skill level</td>
+    <td>Categories</td>
+    <td>Experience</td>
+    <td>Language</td>
+    <td>Projects</td>
+    <td>Edit</td>
+    <td>Show More</td>
+  </tr>
+  </thead>
+  <tbody>
+  <% @developers.each do |developer| %>
+    <tr>
+      <td><%= developer.name %></td>
+      <td><%= developer.email %></td>
+      <td><%= developer.skill_level %></td>
+      <td><%= developer.categories %></td>
+      <td><%= developer.experience %></td>
+      <td><%= developer.language %></td>
+      <% if (developer.projects).present? %>
+        <td>
+          <% developer.projects.each do |project| %>
+            <%= link_to project.try(:name), project_url(project.id) %>
+          <% end %>
+        </td>
+      <% else %>
+        <td></td>
+      <% end %>
+      <td><%= link_to "Edit",edit_developer_path(developer) ,class: 'btn btn-link',  title: 'edit' %></td>
+      <td><%= link_to "Show",developer_path(developer) ,class: 'btn btn-link',  title: 'Shows' %></td>
+  <% end %>
+  </tr>
+  </tbody>
+</table>
