@@ -1,10 +1,13 @@
 <%= form_with model: @company do |form| %>
-  <div>
-    <%= form.label :Company_Name %></br>
-    <%= form.text_field :comapny_name %>
-  </div></br>
-
-  <div>
-    <%= form.submit :Create ,class: 'btn btn-success' %>
+  <div class="card" style="width: 50% ">
+      <div class="card-body">
+          <div class="mb-3">
+              <%= form.label :Company_Name, class: "form-label" %></br>
+              <%= form.text_field :comapny_name, class: "form-control", placeholder: "Enter Company Name" %>
+          </div></br>
+          <div class="mb-3">
+              <%= form.submit :Create ,class: 'btn btn-success' %>
+          </div>
+      </div>
   </div>
 <% end %>

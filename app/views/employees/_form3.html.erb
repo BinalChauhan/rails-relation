@@ -1,21 +1,25 @@
 <%= form_with  model: @employee do |form| %>
-  <div>
-    <%= form.label :FirstName %></br>
-    <%= form.text_field :firstname %>
-  </div></br>
-  <div>
-    <%= form.label :LastName %><br/>
-    <%= form.text_field :lastname %>
-  </div></br>
-  <div>
-    <%= form.label :Position %><br/>
-    <%= form.text_field :position %>
-  </div></br>
-  <div>
-    <%= form.label :Select_Company %><br/>
-    <%= form.collection_select :company_id, Company.all, :id, :comapny_name, prompt: true %>
-  </div></br>
-  <div>
-    <%= form.submit :Create ,class: 'btn btn-success' %>
+  <div class="card" style="width: 50% ">
+      <div class="card-body">
+          <div class="mb-3">
+              <%= form.label :FirstName, class: "form-label" %></br>
+              <%= form.text_field :firstname, class: "form-control", placeholder: "Enter Firstname"  %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :LastName, class: "form-label" %><br/>
+              <%= form.text_field :lastname, class: "form-control", placeholder: "Enter Lastname"  %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Position, class: "form-label" %><br/>
+              <%= form.text_field :position, class: "form-control", placeholder: "Enter Position"  %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Select_Company, class: "form-label" %><br/>
+                  <%= form.collection_select :company_id, Company.all, :id, :comapny_name,{ prompt: true },{ class: "form-select" } %>
+          </div>
+          <div class="mb-3">
+              <%= form.submit :Create ,class: 'btn btn-success' %>
+          </div>
+      </div>
   </div>
 <% end %>

@@ -1,0 +1,30 @@
+<%= form_with model: @project do |form| %>
+  <div class="card" style="width: 50% ">
+      <div class="card-body">
+          <div class="mb-3">
+              <%= form.label :Name, class: "form-label" %></br>
+              <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Description, class: "form-label" %><br/>
+              <%= form.text_area :description, class: "form-control", placeholder: "Enter Description" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Start_date, class: "form-label" %><br/>
+              <%= form.date_field :start_date, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Select_Developer, class: "form-label" %><br/>
+              <%= form.collection_check_boxes :developer_ids, Developer.all, :id, :name do |b| %>
+              <div class="collection-check-box">
+                  <%= b.check_box(class: "form-check-label") %>
+                  <%= b.label(class: "form-check-label") %>
+              </div>
+              <% end %>
+          </div>
+          <div class="mb-3">
+              <%= form.submit :Create ,class: 'btn btn-success' %>
+          </div>
+      </div>
+  </div>
+<% end %>

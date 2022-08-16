@@ -1,24 +1,15 @@
-// Place all the styles related to the Users controller here.
+// Place all the styles related to the Developers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-#table_2 thead tr td {
+#table_6 thead tr td {
   background-color: #006699;
   color :white;
   padding: 8px;
 }
-#table_2 {
+#table_6 {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border-color: lightgray;
   width: 50%;
-}
-.form-control {
-  transition: none;
-  box-shadow: none !important;
-}
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  margin-left: 20px;
-  margin-top: 20px;
 }

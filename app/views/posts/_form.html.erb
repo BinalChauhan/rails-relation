@@ -1,25 +1,29 @@
 <%= form_with model: @post do |form| %>
-  <div>
-    <%= form.label :Title %></br>
-    <%= form.text_field :title %>
-  </div></br>
-  <div>
-    <%= form.label :Description %><br/>
-    <%= form.text_field :description %>
-  </div></br>
-  <div>
-    <%= form.label :Date %><br/>
-    <%= form.date_field :date %>
-  </div></br>
-  <div>
-    <%= form.label :Select_User %><br/>
-    <%= form.collection_select :user_id, User.all, :id, :fname, prompt: true %>
-  </div></br>
-  <div>
-    <%= form.label :Select_Company %><br/>
-    <%= form.collection_select :company_id, Company.all, :id, :comapny_name, prompt: true %>
-  </div></br>
-  <div>
-    <%= form.submit :Create ,class: 'btn btn-success' %>
+  <div class="card" style="width: 50% ">
+      <div class="card-body">
+          <div class="mb-3">
+              <%= form.label :Title, class: "form-label" %></br>
+              <%= form.text_field :title, class: "form-control", placeholder: "Enter Title" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Description, class: "form-label" %><br/>
+              <%= form.text_field :description, class: "form-control" ,placeholder: "Enter description" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Date, class: "form-label" %><br/>
+              <%= form.date_field :date, class: "form-control" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Select_User, class: "form-label" %><br/>
+              <%= form.collection_select(:user_id, User.all, :id, :fname,{ prompt: true },{ class: "form-select" }) %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Select_Company, class: "form-label" %><br/>
+              <%= form.collection_select :company_id, Company.all, :id, :comapny_name, { prompt: true },{ class: "form-select" } %>
+          </div>
+          <div class="mb-3">
+              <%= form.submit :Create ,class: 'btn btn-success' %>
+          </div>
+    </div>
   </div>
 <% end %>

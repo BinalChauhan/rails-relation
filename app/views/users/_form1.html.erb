@@ -1,17 +1,21 @@
 <%= form_with model: @user do |form| %>
-<div>
-  <%= form.label :FirstName %></br>
-  <%= form.text_field :fname %>
-</div></br>
-<div>
-  <%= form.label :LastName %><br/>
-  <%= form.text_field :lname %>
-</div></br>
-<div>
-  <%= form.label :Email %><br/>
-  <%= form.text_field :email %>
-</div></br>
-<div>
-  <%= form.submit :Create ,class: 'btn btn-success' %>
-</div>
+  <div class="card" style="width: 50% ">
+      <div class="card-body">
+          <div class="mb-3">
+              <%= form.label :FirstName, class: "form-label" %></br>
+              <%= form.text_field :fname, class: "form-control", placeholder: "Enter Firstname" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :LastName, class: "form-label" %><br/>
+              <%= form.text_field :lname, class: "form-control", placeholder: "Enter Lastname" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Email, class: "form-label" %><br/>
+              <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+          </div>
+          <div class="mb-3">
+              <%= form.submit :Create ,class: 'btn btn-success' %>
+          </div>
+      </div>
+  </div>
 <% end %>

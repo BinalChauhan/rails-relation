@@ -1,0 +1,42 @@
+<%= form_with  model: @developer do |form| %>
+  <div class="card" style="width: 50% ">
+      <div class="card-body">
+          <div class="mb-3">
+              <%= form.label :Name, class: "form-label" %></br>
+              <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Email, class: "form-label" %><br/>
+              <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Skill_Level, class: "form-label" %><br/>
+              <%= form.select :skill_level, [['Expert','Expert'],['Intermidiate','Intermidiate'],['Beginner','Beginner']],{} ,{ class: "form-select" } %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Categories, class: "form-label" %><br/>
+              <%= form.select :categories, [['Front-end','Front-end'],['Back-end','Back-end'],['Fullstack','Fullstack']], {},{ class: "form-select" } %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Experience, class: "form-label" %><br/>
+              <%= form.select :experience, [['Lessthen-1year','Lessthen-1year'],['Lessthen-3year','Lessthen-3year'],['Above-5year','Above-5year'],['Above-10year','Above-10year']], {},{ class: "form-select" } %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :language , class: "form-label"%><br/>
+              <%= form.select :language, [['ROR','ROR'],['Python','Python'],['C#','C#'],['Android','Android'],['Java','Java'],['.Net','.Net'],['R','R']],{} ,{ class: "form-select" } %>
+          </div>
+          <div class="mb-3">
+              <%= form.label :Select_Project, class: "form-label" %><br/>
+              <%= form.collection_check_boxes :project_ids, Project.all, :id, :name do |b| %>
+              <div class="collection-check-box">
+                  <%= b.check_box(class: "form-check-label") %>
+                  <%= b.label(class: "form-check-label") %>
+              </div>
+              <% end %>
+          </div>
+          <div class="mb-3">
+              <%= form.submit :Create ,class: 'btn btn-success' %>
+          </div>
+      </div>
+  </div>
+<% end %>
