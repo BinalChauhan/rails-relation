@@ -1,0 +1,17 @@
+<%= form_with(model: [@project,@task])  do |form| %>
+  <div class="card" style="width: 50% ">
+    <div class="card-body">
+      <div class="mb-3">
+        <%= form.label :Title, class: "form-label" %></br>
+        <%= form.text_field :title, class: "form-control", placeholder: "Enter Title" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :Estimated_Hours, class: "form-label" %><br/>
+        <%= form.text_field :estimated_hour, class: "form-control", placeholder: "Enter Estimated hours" %>
+      </div>
+      <div class="mb-3">
+        <%= form.submit :Create ,class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+<% end %>

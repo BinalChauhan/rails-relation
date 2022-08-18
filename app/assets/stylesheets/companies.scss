@@ -13,3 +13,8 @@
   border-color: lightgray;
   width: 50%;
 }
+a.btn-secondary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: none;
+  --bs-btn-border-color: none;
+}

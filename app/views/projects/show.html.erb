@@ -1,5 +1,48 @@
-<p><b>Name :</b> <%= @project.name %></p>
-<p><b>Description :</b> <%= @project.description %></p>
-<p><b>Start Date :</b> <%= @project.start_date %></p>
+<div class="card" id="card1">
+  <div class="card-body">
+      <div class="row">
+          <div class="col">
+            <h5><b>Name :</b> <%= @project.name %></h5>
+          </div>
+      </div>
+      <% @project.tasks.each do |task| %>
+      <div class="card">
+          <div class="card-body">
+            <b>Task <%= task.id %> : </b>&nbsp<%= task.title %>
+            <%= link_to "Delete", project_task_path(@project,task),method: :delete, class: 'btn btn-danger btn-sm'%>
+          </div>
+      </div>
+      <div class="div1">
+        <%= link_to "Add Subtask",projects_path(@project), class: 'btn btn-primary btn-sm' %>
+      </div>
+      <% end %>
+  </div>
+</div>
 
-<%= link_to "Edit" ,edit_project_path %>  &nbsp <%= link_to "Back",projects_path %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<%#= link_to "Edit" ,edit_project_path %>  &nbsp <%#= link_to "Back",projects_path %>-->
