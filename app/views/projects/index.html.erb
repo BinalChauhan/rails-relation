@@ -7,8 +7,8 @@
     <td>Description</td>
     <td>Start Date</td>
     <td>Developer</td>
-    <td>Edit</td>
-    <td>Show More</td>
+    <td>Action</td>
+    <td>Task</td>
   </tr>
   </thead>
   <tbody>
@@ -26,8 +26,10 @@
       <% else %>
         <td></td>
       <% end %>
-      <td><%= link_to "Edit",edit_project_path(project) ,class: 'btn btn-link',  title: 'edit' %></td>
-      <td><%= link_to "Show",project_path(project) ,class: 'btn btn-link',  title: 'Shows' %></td>
+      <td><%= link_to "Edit", edit_project_path(project) ,class: 'btn btn-link',  title: 'edit' %>&nbsp |
+      <%= link_to "Show", project_path(project) , class: 'btn btn-link', title: 'Shows' %>&nbsp |
+      <%= link_to "Delete", project_path(project) , method: :delete, class: 'btn btn-link',  title: 'delete' %></td>
+      <td><%= link_to " Create task",new_project_task_path(project),class: 'btn btn-link', title: 'task  ' %></td>
   <% end %>
   </tr>
   </tbody>

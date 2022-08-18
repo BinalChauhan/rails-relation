@@ -11,5 +11,29 @@
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   border-color: lightgray;
-  width: 50%;
+  width: 70%;
+}
+.t{
+  text-align: center;
+}
+#card1
+{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  width: 70%;
+  margin: 0 auto;
+}
+.div1
+{
+  margin-top: 10px;
+}
+a.btn-primary {
+  background-color: #006699;
+  border-color: #006699;
+  text-decoration: none;
+  --bs-btn-hover-bg: #006699;
+  --bs-btn-hover-border-color:  #006699;
+  margin-left: 92%;
+}
+a.btn-danger {
+  float: right;
 }

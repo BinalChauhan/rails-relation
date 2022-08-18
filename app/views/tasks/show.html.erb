@@ -1,0 +1,7 @@
+<p><b>Title :</b> <% @project.tasks.each do |task| %>
+    <%= task.title %></p>
+    <% end %>
+<!--<p><b>Estimated Hours :</b> <%#= @project.task.estimated_hour %></p>-->
+<!--<p><b>Start Date :</b> <%#= @task.project.name %></p>-->
+
+<%= link_to "Edit"%>  &nbsp <%= link_to "Back" %>

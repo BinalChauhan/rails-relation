@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :find_project, only: [:show, :edit,:update]
+  before_action :find_project, only: [:show, :edit,:update ,:destroy]
 
   def index
     @projects = Project.all
@@ -25,11 +25,16 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(project_para)
-      redirect_to @project
-    else
-      render :new, status: :unprocessable_entity
-    end
+      if @project.update(project_para)
+        redirect_to @project
+      else
+        render :new, status: :unprocessable_entity
+      end
+  end
+
+  def destroy
+    @project.destroy
+    redirect_to projects_path, status: :see_other
   end
 
   private
