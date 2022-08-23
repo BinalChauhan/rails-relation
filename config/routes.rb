@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :tasks
   end
   resources :developers
+  resources :subtasks
   get "/posts/display/:id", to: "posts#display", as: "display_post"
 end

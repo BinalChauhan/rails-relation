@@ -1,0 +1,23 @@
+<%= form_with model: @subtask, local: false do |form| %>
+  <div class="card" style="width: 50% ">
+    <div class="card-body">
+      <div class="mb-3">
+        <%= form.label :Title, class: "form-label" %></br>
+        <%= form.text_field :title, class: "form-control", placeholder: "Enter Title" %>
+      </div>
+      <div class="mb-3">
+        <%= form.label :Description, class: "form-label" %><br/>
+        <%= form.text_field :description, class: "form-control", placeholder: "Enter description" %>
+      </div>
+      <div>
+        <%= form.hidden_field :task_id, value:params[:task_id] %>
+      </div>
+      <div>
+        <%= form.hidden_field :project_id, value:params[:project_id] %>
+      </div>
+      <div class="mb-3">
+        <%= form.submit :Create ,class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+<% end %>
