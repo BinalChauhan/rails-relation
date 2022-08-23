@@ -1,42 +1,32 @@
 <div class="card" id="card1">
   <div class="card-body">
-      <div class="row">
-          <div class="col">
-            <h5><b>Name :</b> <%= @project.name %></h5>
-          </div>
+    <div class="row">
+      <div class="col">
+        <h5><b>Name :</b> <%= @project.name %></h5>
       </div>
-      <% @project.tasks.each do |task| %>
+    </div>
+    <% @project.tasks.each do |task| %>
       <div class="card">
+        <div class="card-body">
+          <b>Task <%= task.id %> : </b>&nbsp<%= task.title %>
+          <%= link_to "Delete", project_task_path(@project, task), method: :delete, class: 'btn btn-danger btn-sm' %>
+        </div>
+        <% task.subtasks.each do |subtask| %>
+        <div class="card" id="card2"<%= subtask.id %>>
           <div class="card-body">
-            <b>Task <%= task.id %> : </b>&nbsp<%= task.title %>
-            <%= link_to "Delete", project_task_path(@project,task),method: :delete, class: 'btn btn-danger btn-sm'%>
+            <b>Subtask <%= subtask.id %> :</b>&nbsp <%= subtask.title %>
           </div>
+        </div>
+        <% end %>
       </div>
       <div class="div1">
-        <%= link_to "Add Subtask",projects_path(@project), class: 'btn btn-primary btn-sm' %>
+        <% p @project.id  %>
+        <%= link_to "Add Subtask", new_subtask_path(@subtask,project_id: @project.id, task_id: task.id), remote: true, class: 'btn btn-primary btn-sm', id: 'btn1'%>
       </div>
-      <% end %>
+      <div id="div2-<%= task.id %>"></div>
+    <% end %>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
