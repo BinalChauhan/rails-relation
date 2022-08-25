@@ -12,10 +12,8 @@ class SubtasksController < ApplicationController
 
   def create
     @project = Project.find_by(id: params[:subtask][:project_id])
-    p @project
     @task = Task.find_by(id: params[:subtask][:task_id])
     @subtask = Subtask.create!(subtask_pera)
-    p @task
     respond_to do |format|
       if @subtask.save
         format.js { redirect_to project_path(@project) }

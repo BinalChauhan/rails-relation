@@ -1,31 +1,67 @@
 <div class="card" id="card1">
-  <div class="card-body">
-    <div class="row">
-      <div class="col">
-        <h5><b>Name :</b> <%= @project.name %></h5>
-      </div>
-    </div>
-    <% @project.tasks.each do |task| %>
-      <div class="card">
-        <div class="card-body">
-          <b>Task <%= task.id %> : </b>&nbsp<%= task.title %>
-          <%= link_to "Delete", project_task_path(@project, task), method: :delete, class: 'btn btn-danger btn-sm' %>
+    <div class="card-body">
+        <div class="row">
+            <div class="col">
+                <h5><b>Name :</b> <%= @project.name %>
+                <%= link_to "Add Comments", new_comment_path(project_id: @project.id),remote: true, class: 'btn btn-primary btn-sm', id: 'btn3' %>
+                </h5>
+                <div id="div4-<%= @project.id %>"></div>
+            </div>
         </div>
-        <% task.subtasks.each do |subtask| %>
-        <div class="card" id="card2"<%= subtask.id %>>
-          <div class="card-body">
-            <b>Subtask <%= subtask.id %> :</b>&nbsp <%= subtask.title %>
-          </div>
+        <% @project.tasks.each do |task| %>
+        <div class="card">
+            <div class="card-body">
+                <b>Task <%= task.id %> : </b>&nbsp<%= task.title %>
+                    <%= link_to "Delete", project_task_path(@project, task), method: :delete, class: 'btn btn-danger btn-sm' %>
+            </div>
+            <% task.subtasks.each do |subtask| %>
+            <div class="card" id="card2"<%= subtask.id %>>
+                <div class="card-body">
+                    <b>Subtask <%= subtask.id %> :</b>&nbsp <%= subtask.title %>
+                </div>
+            </div>
+            <% end %>
+            <div class="div1">
+                <div class="d-flex">
+                    <%= link_to "Add Comments", new_comment_path(task_id: task.id), remote: true, class: 'btn btn-primary btn-sm', id: 'btn2' %>&nbsp
+                    <%= link_to "Add Subtask", new_subtask_path(@subtask,project_id: @project.id, task_id: task.id), remote: true, class: 'btn btn-primary btn-sm', id: 'btn1'%>
+                </div>
+            </div>
+            <div class="div2" id="div2-<%= task.id %>"></div>
+            <div class="div3" id="div3-<%= task.id %>"></div>
+            <div class="card" id="div5">
+                <div class="card-header">
+                    <i>Task Comments:</i>
+                </div>
+                <div class="card-body">
+                    <% task.comments.each do |comment| %>
+                    <div class="row">
+                      <div class="col-1"><%= image_tag "profile-icon.png", height: 25 %></div>
+                      <div class="col-sm-9"><%= comment.description %></div>
+                      <div class="col-sm-2"><%= comment.created_at.time.strftime("%a %b %d, %I:%M %p") %></div>
+                    </div>
+                    <hr class="divider">
+                    <% end %>
+                </div>
+            </div>
         </div>
         <% end %>
-      </div>
-      <div class="div1">
-        <% p @project.id  %>
-        <%= link_to "Add Subtask", new_subtask_path(@subtask,project_id: @project.id, task_id: task.id), remote: true, class: 'btn btn-primary btn-sm', id: 'btn1'%>
-      </div>
-      <div id="div2-<%= task.id %>"></div>
-    <% end %>
-  </div>
+        <div class="card div4">
+            <div class="card-header">
+                <i>Project Comments:</i>
+            </div>
+            <div class="card-body">
+                <% @project.comments.each do |comment| %>
+                <div class="row">
+                    <div class="col-1"><%= image_tag "profile-icon.png", height: 25 %></div>
+                    <div class="col-sm-9"><%= comment.description %></div>
+                    <div class="col-sm-2"><%= comment.created_at.time.strftime("%a %b %d, %I:%M %p") %></div>
+                </div>
+                <hr class="divider">
+                <% end %>
+          </div>
+        </div>
+    </div>
 </div>
 
 

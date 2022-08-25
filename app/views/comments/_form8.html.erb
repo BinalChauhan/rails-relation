@@ -1,0 +1,19 @@
+<%= form_for [@comment] do |form| %>
+  <div class="card" style="width: 50% ">
+    <div class="card-body">
+      <div class="mb-3">
+        <%= form.label :Description, class: "form-label" %><br/>
+        <%= form.text_area :description, class: "form-control", placeholder: "Enter description" %>
+      </div>
+      <div class="mb-3">
+        <%= form.submit :Create ,class: 'btn btn-success' %>
+      </div>
+      <div>
+        <%= form.hidden_field :task_id, value:params[:task_id] %>
+      </div>
+      <div>
+        <%= form.hidden_field :project_id, value:params[:project_id] || @task.project_id %>
+      </div>
+    </div>
+  </div>
+<% end %>

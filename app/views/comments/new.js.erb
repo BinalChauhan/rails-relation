@@ -1,0 +1,8 @@
+var $project = $("<%= @project&.id %>");
+var $task = $("<%= @task&.id %>");
+if($project){
+    $('#div4-<%= @project&.id %>').html("<%= j render "form8" %>");
+}
+if($task){
+    $("#div3-<%= @task&.id %>").html("<%= j render "form8" %>");
+}

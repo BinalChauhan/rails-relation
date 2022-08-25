@@ -13,18 +13,32 @@
   border-color: lightgray;
   width: 70%;
 }
-.t{
+.t {
   text-align: center;
 }
-#card1
-{
+#card1 {
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.1);
   width: 70%;
   margin: 0 auto;
 }
-.div1
-{
-  margin-top: 10px;
+.div1 {
+  margin-bottom: 10px;
+}
+.div2 {
+  margin-bottom: 10px;
+}
+.div3 {
+   margin-bottom: 10px;
+ }
+.div4 {
+  box-shadow: none;
+  border-color: #006699;
+}
+#div5 {
+  margin-bottom: 10px;
+  width: 95%;
+  box-shadow: none;
+  border-color: #006699;
 }
 a.btn-primary {
   background-color: #006699;
@@ -32,13 +46,30 @@ a.btn-primary {
   text-decoration: none;
   --bs-btn-hover-bg: #006699;
   --bs-btn-hover-border-color:  #006699;
-  margin-left: 92%;
+  //margin-left: 92%;
 }
 a.btn-danger {
   float: right;
 }
-#card2{
+#card2 {
   width: 95%;
   margin-bottom: 10px;
   box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+}
+#btn2 {
+  margin-left: 80%;
+}
+#btn3 {
+  float: right;
+}
+.divider{
+  border-color: lightslategray;
+}
+.col-1 {
+  width: 3.5%;
+}
+.col-sm-2 {
+  width: 21%;
+  padding-left: 6%;
+  color: slategrey;
 }
