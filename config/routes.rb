@@ -10,5 +10,6 @@ Rails.application.routes.draw do
   end
   resources :developers
   resources :subtasks
+  resources :comments
   get "/posts/display/:id", to: "posts#display", as: "display_post"
 end
