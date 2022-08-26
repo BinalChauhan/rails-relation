@@ -21,12 +21,24 @@
     </li>
   </ul>
   <div>
+    <% if(account_signed_in?) %>
+      <div class="dropdown">
+        <%= image_tag "profile-icon.png", height: 36, class: "dropdown-toggle", data: {bs_toggle: 'dropdown'} %>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1">
+          <li class="dropdown-item">Edit Profile</li>
+          <li class="dropdown-item">View Profile</li>
+          <li><%= link_to "logout",destroy_account_session_path, title: 'logout', class: 'dropdown-item', method: :delete %></li>
+        </ul>
+      </div>
+      <% else %>
     <span>
       <%= link_to "Signup" ,new_account_registration_path, title: 'signup', class: 'btn btn-secondary'%>
     </span>
     <span style="float: right">
       <%= link_to "Signin" ,new_account_session_path, title: 'signin', class: 'btn btn-secondary'%>
     </span>
+      <% end %>
   </div>
 </div>
 </nav>
+
