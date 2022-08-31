@@ -35,7 +35,7 @@
                 </div>
                 <div class="card-body">
                     <% task.comments.each do |comment| %>
-                    <div class="row">
+                    <div class="row" id="row2">
                       <div class="col-1"><%= image_tag "profile-icon.png", height: 25 %></div>
                       <div class="col-sm-9"><%= comment.description %></div>
                       <div class="col-sm-2"><%= comment.created_at.time.strftime("%a %b %d, %I:%M %p") %></div>
@@ -52,7 +52,7 @@
             </div>
             <div class="card-body">
                 <% @project.comments.each do |comment| %>
-                <div class="row">
+                <div class="row" id="row1">
                     <div class="col-1"><%= image_tag "profile-icon.png", height: 25 %></div>
                     <div class="col-sm-9"><%= comment.description %></div>
                     <div class="col-sm-2"><%= comment.created_at.time.strftime("%a %b %d, %I:%M %p") %></div>

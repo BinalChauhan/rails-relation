@@ -23,10 +23,15 @@
   <div>
     <% if(account_signed_in?) %>
       <div class="dropdown">
-        <%= image_tag "profile-icon.png", height: 36, class: "dropdown-toggle", data: {bs_toggle: 'dropdown'} %>
+        <% p current_account %>
+        <% if current_account.image.present? %>
+          <%= image_tag current_account.image, height: 36,width: 40, class: "dropdown-toggle", data: {bs_toggle: 'dropdown'} %>
+      <% else %>
+          <%= image_tag "profile-icon.png", height: 36,width: 40, class: "dropdown-toggle", data: {bs_toggle: 'dropdown'} %>
+      <% end %>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1">
-          <li class="dropdown-item">Edit Profile</li>
-          <li class="dropdown-item">View Profile</li>
+          <li><%= link_to "Edit Profile",edit_account_registration_path, title: 'editprofile', class: 'dropdown-item' %></li>
+          <li><%= link_to "View Profile",account_path(current_account),title: "viewprofile", class: 'dropdown-item' %></li>
           <li><%= link_to "logout",destroy_account_session_path, title: 'logout', class: 'dropdown-item', method: :delete %></li>
         </ul>
       </div>
