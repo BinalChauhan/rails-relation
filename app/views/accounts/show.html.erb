@@ -5,8 +5,8 @@
       <%= form_for(@account,  html: { class: "form" }) do |f| %>
       <div class="row">
         <div class="col-2">
-          <% if @account.image.present? %>
-            <%= image_tag @account.image, height: 75, width: 75,class: "imgtag" %>
+          <% if current_account.image.present? %>
+            <%= image_tag current_account.image, height: 75, width: 75,class: "imgtag" %>
           <% else %>
             <%= image_tag "profile-icon.png", height: 75, width: 75, class: "imgtag" %>
         <% end %>
