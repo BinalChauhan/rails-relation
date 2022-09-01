@@ -1,6 +1,6 @@
 class AccountsController < ApplicationController
   def show
-    @account = Account.find_by(id: params[:id])
+    @account = Account.friendly.find_by(slug: params[:id])
   end
 
 end
