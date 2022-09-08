@@ -12,4 +12,17 @@ $(document).ready(function (){
         $('[data-toggle="tooltip"]').tooltip();
     });
 
+    $(".AddCart").click(function (){
+        var productid = $(this).attr("data-id")
+        alert("consol")
+        $.ajax({
+            url: "/carts",
+            type: "POST",
+            dataType: "json",
+            data: {product_id:productid},
+            success: function () {
+                console.log("sucesss");
+            },
+        });
+    });
 })
