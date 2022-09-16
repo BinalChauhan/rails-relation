@@ -1,11 +1,9 @@
 class CartsController < ApplicationController
 
     def index
-        @carts = current_account.cart
+        @current_account_cart = current_account.cart
     end
-
     def create
-        p current_account
         if(current_account.cart.nil?)
             @cart = Cart.create(account_id: current_account.id)
             @cart_item = @cart.cart_items.create(cart_id:@cart,product_id: params[:product_id])
@@ -17,8 +15,6 @@ class CartsController < ApplicationController
         else
             @cart = current_account.cart
             @cart_item = @cart.cart_items.create(cart_id: @cart,product_id: params[:product_id])
-            p "jjjjjjjjjjj"
-            p @cart_item
             if @cart_item.save
                 redirect_to carts_path
             else
@@ -26,7 +22,6 @@ class CartsController < ApplicationController
             end
         end
     end
-
     def destroy
         @cart_item = CartItem.find_by(id: params[:id])
         @cart_item.destroy
