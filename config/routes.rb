@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :accounts
+    require 'sidekiq/web'
+    mount Sidekiq::Web => '/sidekiq'
+    devise_for :accounts ,controllers: {
+      registrations: 'accounts/registrations',
+  }
   resources :accounts,only: [:show]
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+# For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root "products#index"
   resources :posts
   resources :users

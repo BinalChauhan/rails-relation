@@ -1,5 +1,4 @@
 $(document).ready(function (){
-
     $("tr").not(':first').hover(function () {
             $(this).css("background","#e6f7ff ");
         },
@@ -14,7 +13,7 @@ $(document).ready(function (){
 
     $(".AddCart").click(function (){
         var productid = $(this).attr("data-id")
-        alert("consol")
+        alert("data save!!")
         $.ajax({
             url: "/carts",
             type: "POST",
@@ -25,4 +24,5 @@ $(document).ready(function (){
             },
         });
     });
+
 })
