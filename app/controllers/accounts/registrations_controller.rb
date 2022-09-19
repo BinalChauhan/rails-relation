@@ -15,7 +15,6 @@ class Accounts::RegistrationsController < Devise::RegistrationsController
     if @account
         AccountRegistrationJob.new(@account).perform
     end
-
   end
 
   # GET /resource/edit
