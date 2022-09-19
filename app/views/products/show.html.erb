@@ -4,7 +4,15 @@
       <div class="col-md-6 border-end">
         <div class="d-flex flex-column justify-content-center">
           <div class="main_image">
+<<<<<<< HEAD
             <%= image_tag @product.image ,height: 400,width: 600%>
+=======
+			  <% if @product.image.present? %>
+				  <%= image_tag @product.image ,height: 400,width: 600%>
+		  <% else %>
+				  <%= image_tag "icon.png" ,height: 400,width: 600%>
+		  <% end %>
+>>>>>>> f2ef46f9e509c7427def72ec559949aab7b8df4b
           </div>
         </div>
       </div>

@@ -1,0 +1,14 @@
+<h1>Welcome <%= @account.firstname %>,</h1>
+<p>
+	You have successfully signed up to <%= @account.email %>,<br>
+	your product is: <%= @product.name %>.<br>
+	<% if @product.image.present? %>
+		Image: <%= image_tag @product.image, width: 50, height: 50 %>.<br>
+	<% else %>
+		<p></p>
+	<% end %>
+	Description: <%= @product.description %>.<br>
+	Price: <%= @product.price %>.<br>
+
+</p>
+<p>Thanks for joining and have a great day!</p>

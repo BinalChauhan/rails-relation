@@ -1,5 +1,4 @@
 $(document).ready(function (){
-
     $("tr").not(':first').hover(function () {
             $(this).css("background","#e6f7ff ");
         },
@@ -14,7 +13,10 @@ $(document).ready(function (){
 
     $(".AddCart").click(function (){
         var productid = $(this).attr("data-id")
+<<<<<<< HEAD
         alert("consol")
+=======
+>>>>>>> f2ef46f9e509c7427def72ec559949aab7b8df4b
         $.ajax({
             url: "/carts",
             type: "POST",
@@ -25,4 +27,8 @@ $(document).ready(function (){
             },
         });
     });
+<<<<<<< HEAD
+=======
+
+>>>>>>> f2ef46f9e509c7427def72ec559949aab7b8df4b
 })
