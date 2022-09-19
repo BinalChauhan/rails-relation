@@ -13,7 +13,6 @@ $(document).ready(function (){
 
     $(".AddCart").click(function (){
         var productid = $(this).attr("data-id")
-        alert("data save!!")
         $.ajax({
             url: "/carts",
             type: "POST",
