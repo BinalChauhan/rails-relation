@@ -75,5 +75,28 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.asset_host = { host: 'localhost', port: 3000 }
+
+
+  # Defaults to:
+  # config.action_mailer.sendmail_settings = {
+  #   location: '/usr/sbin/sendmail',
+  #   arguments: '-i'
+  # }
+
+  # config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+
+  config.action_mailer.smtp_settings = {
+      address:              'smtp.gmail.com',
+      port:                 5432,
+      user_name:            'binal.essence@gmail.com',
+      password:             'binal@123',
+      authentication:       'plain',
+      enable_starttls_auto: true
+  }
+
+
 
 end
