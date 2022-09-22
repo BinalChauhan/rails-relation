@@ -1,9 +1,9 @@
 <div class="container" id="containershow">
   <div class="card" id="showcard">
-    <div class="card-body">
+    <div class="card-body" id="accountcardbody">
       <h4><b><i>View Profile</i></b></h4>
       <%= form_for(@account,  html: { class: "form" }) do |f| %>
-      <div class="row">
+      <div class="row showrow">
         <div class="col-2">
           <% if current_account.image.present? %>
             <%= image_tag current_account.image, height: 75, width: 75,class: "imgtag" %>
@@ -16,7 +16,7 @@
           <%= f.file_field :image, id: "file" %>
         </div>
       </div>
-      <div class="row">
+      <div class="row showrow">
         <div class="col-6">
           <b>First Name: </b>&nbsp <%= f.text_field :firstname, class: "form-control" %>
         </div>
@@ -24,12 +24,12 @@
           <b>Last Name: </b>&nbsp <%= f.text_field :lastname,class: "form-control" %>
         </div>
       </div>
-      <div class="row">
+      <div class="row showrow">
         <div class="col">
           <b>Email: </b>&nbsp<%= f.text_field :email, class: "form-control" %>
         </div>
       </div>
-      <div class="row">
+      <div class="row showrow">
         <div class="col">
           <%= link_to "Save Change",account_path,class: "btn btn-success", id: "showsave" %>
         </div>
