@@ -23,7 +23,7 @@
 						</div>
 						<hr>
 						<div class="card-body">
-							<div class="text-right buttons"> <button class="btn btn-outline-success">Make Order</button>   <button class="btn btn-success AddCart" data-id="<%= product.id %>">Add to cart</button> </div>
+							<div class="text-right buttons"> <%= link_to "Make Order", new_order_path(product_id: product), class: "btn btn-outline-success" %>   <button class="btn btn-success AddCart" data-id="<%= product.id %>">Add to cart</button> </div>
 						</div>
 						</div>
 						</div>

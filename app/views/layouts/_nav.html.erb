@@ -34,6 +34,7 @@
       <% end %>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenu1">
           <li><%= link_to "My wishlist",carts_path, title: 'addtocart', class: 'dropdown-item'  %></li>
+          <li><%= link_to "My Order", orders_path, title: 'myorder', class: 'dropdown-item' %></li>
           <li><%= link_to "Edit Profile",edit_account_registration_path, title: 'editprofile', class: 'dropdown-item' %></li>
           <li><%= link_to "View Profile",account_path(current_account.slug),title: "viewprofile", class: 'dropdown-item' %></li>
           <li><%= link_to "logout",destroy_account_session_path, title: 'logout', class: 'dropdown-item', method: :delete %></li>
