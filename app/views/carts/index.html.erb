@@ -16,30 +16,6 @@
 											<h6>No item in your cart.   !!!</h6>
 										</div>
 									<% else %>
-<<<<<<< HEAD
-										<% @carts.cart_items.each do |item| %>
-											<div class="row mb-4 d-flex justify-content-between align-items-center">
-												<div class="col-md-1 col-lg-1 col-xl-1">
-													<%= image_tag item.product.image,class: "img-fluid rounded-3",width: 120 %>
-												</div>
-												<div class="col-md-7 col-lg-7 col-xl-7">
-													<h6 class="text-muted"><%= item.product.name %></h6>
-													<h6 class="text-black mb-0"><%= item.product.description %></h6>
-												</div>
-												<div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-													<h6 class="mb-0"><%= item.product.price %></h6>
-												</div>
-												<div class="col-md-1 col-lg-1 col-xl-1 text-end">
-													<i><%= link_to '',cart_path(item),class: "fas fa-times text-muted", method: :delete %></i>
-												</div>
-											</div>
-
-											<hr class="my-4">
-										<% end %>
-									<% end %>
-									<div class="pt-5">
-										<h6 class="mb-0"><i class="fas fa-long-arrow-alt-left me-2"> &nbsp <%= link_to "Back to shop",root_path,class:"text-body" %></i>
-=======
 											<% @current_account_cart.cart_items.each do |item| %>
 												<div class="row mb-4 d-flex justify-content-between align-items-center">
 													<div class="col-md-1 col-lg-1 col-xl-1">
@@ -78,7 +54,6 @@
 										<% end %>
 										<div class="pt-5">
 											<h6 class="mb-0"><i class="fas fa-long-arrow-alt-left me-2"> &nbsp <%= link_to "Back to shop",root_path,class:"text-body" %></i>
->>>>>>> f2ef46f9e509c7427def72ec559949aab7b8df4b
 										</h6>
 									</div>
 								</div>

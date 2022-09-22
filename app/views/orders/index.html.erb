@@ -1,0 +1,49 @@
+<section class="h-100 h-custom" style="background-color: #FBFBFB;">
+	<div class="container py-5 h-100">
+		<div class="row d-flex justify-content-center align-items-center h-100">
+			<div class="col-12">
+				<div class="card card-registration card-registration-2" style="border-radius: 15px; box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) ;">
+					<div class="card-body p-0">
+						<div class="row g-0">
+							<div class="col-lg-12">
+								<div class="p-5">
+									<div class="d-flex justify-content-between align-items-center mb-5">
+										<h1 class="fw-bold mb-0 text-black">Your Orders</h1>
+									</div>
+									<hr class="my-4">
+										<% @orders.each do |order| %>
+											<div class="row mb-4 d-flex justify-content-between align-items-center">
+												<div class="col-md-1 col-lg-1 col-xl-1">
+														<%= image_tag  product_image(order), class: "img-fluid rounded-3",width: 120 %>
+												</div>
+												<div class="col-md-6 col-lg-6 col-xl-6">
+														<h6 class="text-muted"><%= product_name(order) %></h6>
+														<h6 class="text-black mb-0"><%= product_description(order) %></h6>
+												</div>
+												<div class="col-md-2 col-lg-2 col-xl-2 offset-lg-1">
+														<h6 class="mb-0"><%= product_price(order) %></h6>
+												</div>
+												<div class="col-md-2 col-lg-2 col-xl-2 text-end">
+													<i><%= link_to 'Write Reviwes',orders_path, class: "btn btn-primary btn-sm", id: "orderbtn" %></i>
+												</div>
+											</div>
+										<hr class="my-4">
+									<% end %>
+									<div class="pt-5">
+										<h6 class="mb-0"><i class="fa fa-long-arrow-alt-left me-2"> &nbsp <%= link_to "Back to shop",root_path,class:"text-body" %></i>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="text-center" id="pro1">
+		<ul class="pagination justify-content-center">
+			<%== pagy_bootstrap_nav(@pagy1) %>
+		</ul>
+	</div>
+</section>

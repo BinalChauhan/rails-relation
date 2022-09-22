@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   resources :products
   resources :carts
   resources :cart_items
+  resources :orders
   get "/posts/display/:id", to: "posts#display", as: "display_post"
 end
