@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :posts
     resources :users
     resources :companies
-    resources :employees
+    resources :employees    
     resources :projects do
         resources :tasks
     end
