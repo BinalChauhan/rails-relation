@@ -3,44 +3,48 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 #containershow {
-  width: 40%;
-  position: center;
+  	width: 40%;
+  	position: center;
+    background-color: white;
 }
 #showcard {
-  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1);
 
 }
 #showsave {
-  text-decoration: none;
-  float: right;
+    text-decoration: none;
+    float: right;
 }
 .form-control{
-  font-size: 14px;
-  border-color: #555555;
-  font-weight: 500;
-  letter-spacing: 1px;
-  height: 40px;
-  padding: 6px 12px;
-  border-radius: 5px;
-  border: 2px solid #F2F5F6;
-  box-shadow: none;
+    font-size: 14px;
+    border-color: #555555;
+    font-weight: 500;
+    letter-spacing: 1px;
+    height: 40px;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 2px solid #F2F5F6;
+    box-shadow: none;
 }
 .col-10.btn.btn-primary {
-  position: relative;
-  overflow: hidden;
-  width: 15%;
-  height: 20%;
-  margin-top: 3%;
-  background-color: #004d4d;
-  border-color: #004d4d;
+    position: relative;
+    overflow: hidden;
+    width: 15%;
+    height: 20%;
+    margin-top: 3%;
+    background-color: #004d4d;
+    border-color: #004d4d;
 }
 #file {
-  position: absolute;
-  font-size: 50px;
-  opacity: 0;
-  right: 0;
-  top: 0;
+    position: absolute;
+    font-size: 50px;
+    opacity: 0;
+    right: 0;
+    top: 0;
 }
 .imgtag {
-  border-radius: 50%;
+    border-radius: 50%;
+}
+.showrow {
+    margin-top: 5% !important;
 }
