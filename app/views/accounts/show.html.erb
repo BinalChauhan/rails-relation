@@ -2,8 +2,8 @@
   <div class="card" id="showcard">
     <div class="card-body" id="accountcardbody">
       <h4><b><i>View Profile</i></b></h4>
-      <%= form_for(@account,  html: { class: "form" }) do |f| %>
-      <div class="row showrow">
+      <%= form_for(@account,  html:  { class: "form changeimage" }, url: uploadimage_path(@account),remote: true ) do |f| %>
+      <div class="row">
         <div class="col-2">
           <% if current_account.image.present? %>
             <%= image_tag current_account.image, height: 75, width: 75,class: "imgtag" %>

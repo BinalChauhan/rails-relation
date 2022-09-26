@@ -25,4 +25,5 @@ class ProductsController < ApplicationController
     def product_pera
         params.require(:product).permit(:name,:image,:price,:description,:rating,:brand)
     end
+
 end
