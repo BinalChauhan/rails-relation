@@ -6,6 +6,7 @@ class Account < ApplicationRecord
   has_one_attached :image
   has_one :cart
   has_many :orders
+
   extend FriendlyId
   friendly_id :email, use: :slugged
   validates :firstname, :lastname, presence: true
