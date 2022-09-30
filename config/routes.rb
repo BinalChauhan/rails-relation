@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
     get "/success", to: "checkouts#success"
     get "/cancel", to: "checkouts#cancel"
+
     get "/posts/display/:id", to: "posts#display", as: "display_post"
     patch "/accounts/uploadimage/:id", to: "accounts#uploadimage", as: "uploadimage"
 end
