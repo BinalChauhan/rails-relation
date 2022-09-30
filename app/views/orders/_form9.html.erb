@@ -1,7 +1,11 @@
 <div class="container d-lg-flex">
         <div class="box-1 bg-light user">
             <div class="d-flex align-items-center mb-3">
-				<%= image_tag current_account.image, class: "pic rounded-circle" %>
+				<% if current_account.image.present? %>
+					<%= image_tag current_account.image, class: "pic rounded-circle" %>
+				<% else %>
+					<%= image_tag "defult.png", class: "pic rounded-circle"%>
+				<% end %>
                 <p class="ps-2 name"><%= current_account.firstname %></p>
             </div>
             <div class="box-inner-1 pb-3 mb-3 ">
@@ -24,62 +28,40 @@
                 </div>
             </div>
         </div>
-        <div class="box-2">
+        <div class="box-2" style="background-color: #f9f9f9">
             <div class="box-inner-2">
                 <div>
                     <p class="fw-bold">Payment Details</p>
                     <p class="dis mb-3">Complete your purchase by providing your payment details</p>
                 </div>
-				<%= form_with model: @order do |form| %>
+				<%= form_with(model: @order, url: checkouts_path(product_id: @product.id,order_id: @order), local: false,method: :post) do |form| %>
                     <div class="mb-3">
                         <p class="dis fw-bold mb-2">Email address</p>
                         <input class="form-control" type="email" value=<%= current_account.email %>>
-
                     </div>
                     <div>
-                        <p class="dis fw-bold mb-2">Card details</p>
-                        <div class="d-flex align-items-center justify-content-between card-atm border rounded">
-                            <div class="fab fa-cc-visa ps-3"></div>
-                            <input type="text" class="form-control" placeholder="Card Details">
-                            <div class="d-flex w-50">
-                                <input type="text" class="form-control px-0" placeholder="MM/YY">
-                                <input type="password" maxlength=3 class="form-control px-0" placeholder="CVV">
-                            </div>
-                        </div>
                         <div class="my-3 cardname">
                             <p class="dis fw-bold mb-2">Cardholder name</p>
-							<p class="form-control"><%= current_account.firstname %> <%= current_account.lastname
-							%></p>
+							<p class="form-control"><%= current_account.firstname %> <%= current_account.lastname %></p>
                         </div>
-                        <div class="address">
-                            <p class="dis fw-bold mb-3">Billing address</p>
-                            <%= form.text_field :address, class: "form-control", placeholder: "Enter Address" %>
-
-                            <div class=" my-3">
-                                <p class="dis fw-bold mb-2">Phone Number</p>
-                                <div class="inputWithcheck">
-                                   <%= form.text_field :phone_no, class: "form-control", placeholder: "Enter Phone number" %>
-                                </div>
-                            </div>
-                            <div class="d-flex flex-column dis">
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p>Subtotal</p>
-                                    <p><span class="fas fa-dollar-sign"></span><%= @product.price %></p>
-                                </div>
-
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <p class="fw-bold">Total</p>
-                                    <p class="fw-bold"><span class="fas fa-dollar-sign"></span><%= @product.price %></p>
-                                </div>
-								<%= form.hidden_field :product_id, value:params[:product_id] %>
-								<%= form.hidden_field :account_id, value:current_account.id %>
-								<div><%= form.submit :Pay, class: "btn btn-primary mt-2" %>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                <% end %>
-            </div>
-        </div>
+						<div class="d-flex flex-column dis">
+							<div class="d-flex align-items-center justify-content-between mb-2">
+								<p>Subtotal</p>
+								<p><span class="fas fa-dollar-sign"></span><%= @product.price %></p>
+							</div>
+							<div class="d-flex align-items-center justify-content-between mb-2">
+								<p class="fw-bold">Total</p>
+								<p class="fw-bold"><span class="fas fa-dollar-sign"></span><%= @product.price %></p>
+							</div>
+							<%= form.hidden_field :product_id, value:params[:product_id] %>
+							<%= form.hidden_field :account_id, value:current_account.id %>
+							<div>
+								<%= form.submit :Checkout, class: "btn btn-primary mt-2" %>
+							</div>
+						</div>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
 </div>
-
