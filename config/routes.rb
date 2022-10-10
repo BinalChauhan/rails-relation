@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     resources :carts
     resources :cart_items
     resources :orders
+    resources :reviews
     resources :checkouts, only: [:create]
     resources :webhooks, only: [:create]
 
