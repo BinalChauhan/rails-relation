@@ -5,7 +5,6 @@ class Post < ApplicationRecord
     :'published',
     :'uploaded'
   ]
-  puts "this is enum "
 
   after_create :random_create , :status_value
   private

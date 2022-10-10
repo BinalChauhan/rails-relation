@@ -97,7 +97,7 @@ Rails.application.configure do
       enable_starttls_auto: true
   }
 
-  config.hosts << "7d17-2401-4900-1f3e-5bb7-e38b-1b33-873e-9a77.ngrok.io"
+  config.hosts << "7ae6-2401-4900-1f3f-91f4-4fe5-17bb-4cb5-6c90.ngrok.io"
 
 
 end

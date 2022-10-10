@@ -1,5 +1,6 @@
 class EmployeesController < ApplicationController
   before_action :find_employee ,only: [:show, :edit, :update]
+  skip_before_action :verify_authenticity_token
 
   def index
     @employees = Employee.all

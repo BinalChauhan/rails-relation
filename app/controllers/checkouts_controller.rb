@@ -25,8 +25,8 @@ class CheckoutsController < ApplicationController
                    },
                    customer_email: current_account.email,
                    mode: 'payment',
-                   success_url: "https://7d17-2401-4900-1f3e-5bb7-e38b-1b33-873e-9a77.ngrok.io" + '/success',
-                   cancel_url: "https://7d17-2401-4900-1f3e-5bb7-e38b-1b33-873e-9a77.ngrok.io"  + '/cancel',
+                   success_url: "https://7ae6-2401-4900-1f3f-91f4-4fe5-17bb-4cb5-6c90.ngrok.io" + '/success',
+                   cancel_url: "https://7ae6-2401-4900-1f3f-91f4-4fe5-17bb-4cb5-6c90.ngrok.io"  + '/cancel',
                })
         respond_to do |format|
             format.js
