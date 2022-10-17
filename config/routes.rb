@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
     require 'sidekiq/web'
     mount Sidekiq::Web => '/sidekiq'
     devise_for :accounts ,controllers: {
         registrations: 'accounts/registrations',
+        omniauth_callbacks: "accounts/omniauth_callbacks"
     }
     resources :accounts,only: [:show]
 # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
@@ -29,4 +32,5 @@ Rails.application.routes.draw do
     get "/cancel", to: "checkouts#cancel"
     get "/posts/display/:id", to: "posts#display", as: "display_post"
     patch "/accounts/uploadimage/:id", to: "accounts#uploadimage", as: "uploadimage"
-end
+    # get '/auth/google_oauth2/callback', to: "omniauths#omniauth"
+ end

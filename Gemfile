@@ -31,6 +31,18 @@ gem 'sidekiq', '~> 6.5', '>= 6.5.2'
 gem 'stripe', '~> 6.1.0'
 
 gem 'stripe_event'
+
+gem 'activeadmin'
+
+gem 'arctic_admin'
+
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'omniauth-facebook'
+
+gem 'omniauth-linkedin-oauth2'
 # Use Redis adapter to run Action Cable in production
 gem 'redis', '~> 5.0'
 # Use Active Model has_secure_password
